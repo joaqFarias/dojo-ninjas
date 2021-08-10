@@ -1,0 +1,52 @@
+In [1] from dojo_ninjas_app.models import *
+
+In [2]: dojo1 = dojos.objects.create(name='Dojo-sama', city='Chile', state='vina del mar')
+
+In [3]: dojo2 = dojos.objects.create(name='Dojoci', city='Chile', state='valparaiso')
+
+In [4]: dojo3 = dojos.objects.create(name='Dojomar', city='Chile', state='concon')
+
+In [5]: dojo1.delete()
+Out[5]: (1, {'dojo_ninjas_app.dojos': 1})
+
+In [6]: dojo2.delete()
+Out[6]: (1, {'dojo_ninjas_app.dojos': 1})
+
+In [7]: dojo3.delete()
+Out[7]: (1, {'dojo_ninjas_app.dojos': 1})
+
+In [8]: dojo1 = dojos.objects.create(name='Dojo-sama', city='Chile', state='vina del mar')
+
+In [9]: dojo2 = dojos.objects.create(name='Dojoci', city='Chile', state='valparaiso')
+
+In [10]: dojo3 = dojos.objects.create(name='Dojomar', city='Chile', state='concon')
+
+In [13]: ninja1_1 = ninjas.objects.create(first_name='luffy', last_name='monkey', dojos=dojo1)
+
+In [14]: ninja1_2 = ninjas.objects.create(first_name='zoro', last_name='ronoroa', dojos=dojo1)
+
+In [15]: ninja1_3 = ninjas.objects.create(first_name='sanji', last_name='vinsmoke', dojos=dojo1)
+
+In [16]: ninja2_1 = ninjas.objects.create(first_name='joaquin', last_name='farias', dojos=dojo2)
+
+In [17]: ninja2_2 = ninjas.objects.create(first_name='benjamin', last_name='farias', dojos=dojo2)
+
+In [18]: ninja2_3 = ninjas.objects.create(first_name='jorge', last_name='farias', dojos=dojo2)
+
+In [19]: ninja3_1 = ninjas.objects.create(first_name='gon', last_name='freecss', dojos=dojo3)
+
+In [20]: ninja3_2 = ninjas.objects.create(first_name='ging', last_name='freecss', dojos=dojo3)
+
+In [21]: ninja3_3 = ninjas.objects.create(first_name='killua', last_name='zoldyck', dojos=dojo3)
+
+In [24]: all_ninjas_1 = dojo1.ninja.all()
+
+In [27]: all_ninjas_last = dojos.objects.last().ninja.all()
+
+In [31]: dojo_last_ninja = ninjas.objects.last().dojos
+
+# despues de agregar desc
+
+In [1]: from dojo_ninjas_app.models import *
+
+In [2]: dojo4 = dojos.objects.create(name='The Last Dojo', city='El dorado', state='Desconocido', desc='Dojo nuevo')
